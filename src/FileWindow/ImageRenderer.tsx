@@ -1,7 +1,9 @@
-import React from 'react'
+import { FileProps } from "./FileWindow";
 
-export default function ImageRenderer() {
+export default function ImageRenderer({ src, className }: FileProps) {
   return (
-    <div>ImageRenderer</div>
-  )
+    <figure>
+      <img src={src} className={className} />
+    </figure>
+  );
 }
