@@ -1,17 +1,8 @@
-import { Component, ReactNode } from "react";
-import AudioRenderer from "./AudioRenderer";
 import DefaultRenderer from "./DefaultRenderer";
 import DocumentRenderer from "./DocumentRenderer";
 import ErrorRenderer from "./ErrorRenderer";
-import ImageRenderer from "./ImageRenderer";
 import SpreadsheetRenderer from "./SpreadsheetRenderer";
-import VideoRenderer from "./VideoRenderer";
-
-export interface FileProps {
-  src: string;
-  className?: string;
-}
-
+import "./FileWindow.module.css";
 export interface FileWindowInterface {
   fileName: string;
   fileType:
@@ -37,7 +28,11 @@ export default function FileWindow({
   // get the file type  as pdf, doc, or whatever, and use the apt renderer
   switch (fileType.trim()) {
     case "image":
-      return <ImageRenderer src={fileUrl} className={className} />;
+      return (
+        <figure>
+          <img src={fileUrl} className={className} />
+        </figure>
+      );
 
     case "document":
       return <DocumentRenderer />;
@@ -46,18 +41,20 @@ export default function FileWindow({
       return <SpreadsheetRenderer />;
 
     case "video":
-      return <VideoRenderer src={fileUrl} />;
+      return (
+        <video controls preload="auto" className={className}>
+          <source src={fileUrl} />
+        </video>
+      );
 
     case "audio":
-      return <AudioRenderer />;
+      return (
+        <audio controls preload="auto" className={className}>
+          <source src={fileUrl} type="audio/mp3" />
+        </audio>
+      );
 
     default:
       return <DefaultRenderer />;
   }
 }
-
-// export abstract class FileViewer extends Component {
-//   render(): ReactNode {
-//     return <></>;
-//   }
-// }
