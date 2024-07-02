@@ -1,6 +1,6 @@
 {
   "name": "@opeolluwa/filewindow",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A React file viewer for the web ",
   "main": "dist/index.js",
   "scripts": {
@@ -33,6 +33,7 @@
   "homepage": "https://github.com/opeolluwa/filewindow#readme",
   "dependencies": {
     "-": "^0.0.1",
+    "audiojs": "^0.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "video.js": "^8.12.0"
@@ -42,12 +43,13 @@
     "@babel/preset-react": "^7.24.7",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^26.0.1",
-    "rollup": "^4.18.0",
-    "rollup-plugin-postcss": "^4.0.2",
-    "save-dev": "^0.0.1-security",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^20.14.9",
     "@types/react": "^18.3.3",
+    "css-loader": "^7.1.2",
+    "rollup": "^4.18.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "save-dev": "^0.0.1-security",
     "ts-loader": "^9.5.1",
     "typescript": "^5.5.2",
     "webpack": "^5.92.1",

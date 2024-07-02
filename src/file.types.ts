@@ -14,7 +14,7 @@ export enum FileType {
   Default = "default",
 }
 
-export function getFileIcon(fileExtension: string) {
+export function guessFileType(fileExtension: string): string {
   const imageExtensions = [
     "jpg",
     "jpeg",
@@ -223,27 +223,28 @@ export function getFileIcon(fileExtension: string) {
   const archiveExtensions = ["zip", "rar", "tar", "gz"];
   const extension = fileExtension.toLocaleLowerCase().trim();
 
-  if (imageExtensions.includes(extension)) {
-    return { type: FileType.Image };
-  } else if (audioExtensions.includes(extension)) {
-    return { type: FileType.Audio };
-  } else if (pdfExtensions.includes(extension)) {
-    return { type: FileType.PDF };
-  } else if (csvExtensions.includes(extension)) {
-    return { type: FileType.CSV };
-  } else if (presentationExtensions.includes(extension)) {
-    return { type: FileType.Presentation };
-  } else if (videoExtensions.includes(extension)) {
-    return { type: FileType.Video };
-  } else if (archiveExtensions.includes(extension)) {
-    return { type: FileType.Archive };
-  } else if (documentExtensions.includes(extension)) {
-    return { type: FileType.Document };
-  } else if (textExtensions.includes(extension)) {
-    return { type: FileType.Text };
-  } else if (svgExtensions.includes(extension)) {
-    return { type: FileType.SVG };
-  } else {
-    return { type: FileType.Default };
+  switch (true) {
+    case imageExtensions.includes(extension):
+      return FileType.Image;
+    case audioExtensions.includes(extension):
+      return FileType.Audio;
+    case pdfExtensions.includes(extension):
+      return FileType.PDF;
+    case csvExtensions.includes(extension):
+      return FileType.CSV;
+    case presentationExtensions.includes(extension):
+      return FileType.Presentation;
+    case videoExtensions.includes(extension):
+      return FileType.Video;
+    case archiveExtensions.includes(extension):
+      return FileType.Archive;
+    case documentExtensions.includes(extension):
+      return FileType.Document;
+    case textExtensions.includes(extension):
+      return FileType.Text;
+    case svgExtensions.includes(extension):
+      return FileType.SVG;
+    default:
+      return FileType.Default;
   }
 }

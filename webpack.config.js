@@ -9,7 +9,7 @@ module.exports = (env, argv) => ({
     libraryTarget: "commonjs2",
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js", ".css"],
   },
   module: {
     rules: [
@@ -24,6 +24,10 @@ module.exports = (env, argv) => ({
           },
         ],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/i,
+        use: ["css-loader"],
       },
     ],
   },
