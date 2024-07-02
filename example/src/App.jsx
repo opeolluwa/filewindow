@@ -7,9 +7,9 @@ import testAudio from "../test-files/test-audio.mp3";
 function App() {
   return (
     <>
-      <FileWindow fileUrl={testImage} fileType="image" className="" />
-      <FileWindow fileUrl={testVideo} fileType="video" className="" />
-      <FileWindow fileUrl={testAudio} fileType="audio" className="" />
+      <FileWindow fileUrl={testImage} fileExtension="png" className="" />
+      {/* <FileWindow fileUrl={testVideo} fileType="video" className="" /> */}
+      {/* <FileWindow fileUrl={testAudio} fileType="audio" className="" /> */}
     </>
   );
 }

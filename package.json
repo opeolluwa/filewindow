@@ -1,6 +1,6 @@
 {
   "name": "@opeolluwa/filewindow",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A React file viewer for the web ",
   "main": "dist/index.js",
   "scripts": {
