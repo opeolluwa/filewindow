@@ -7,8 +7,9 @@ audio {
 }
 
 
-img {
+img{
     max-width: 100%;
     display: block;
     margin: 5px;
 }
+

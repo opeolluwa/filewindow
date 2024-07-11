@@ -7,28 +7,24 @@ export const VideoJS = (props, src) => {
   const playerRef = React.useRef(null);
   const { options, onReady } = props;
 
-
-const videoJsOptions = {
-    autoplay: true,
+  const videoJsOptions = {
+    autoplay: false,
     controls: true,
+    width: 500,
+    innerHeight: 500,
     responsive: true,
     fluid: true,
-    sources: [
-      {
-        src: "http://vjs.zencdn.net/v/oceans.mp4",
-        type: "video/mp4",
-      },
-    ],
+    src: "http://vjs.zencdn.net/v/oceans.mp4",
   };
 
   React.useEffect(() => {
-
     // Make sure Video.js player is only initialized once
     if (!playerRef.current) {
       // The Video.js player needs to be _inside_ the component el for React 18 Strict Mode.
       const videoElement = document.createElement("video-js");
 
       videoElement.classList.add("vjs-big-play-centered");
+
       videoRef.current.appendChild(videoElement);
 
       const player = (playerRef.current = videojs(videoElement, options, () => {
@@ -64,8 +60,5 @@ const videoJsOptions = {
     </div>
   );
 };
-
-
-
 
 export default VideoJS;
