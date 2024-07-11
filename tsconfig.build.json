@@ -9,6 +9,8 @@
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "allowJs": true,
+    "noImplicitAny": false,
     "isolatedModules": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true

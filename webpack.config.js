@@ -25,6 +25,7 @@ module.exports = (env, argv) => ({
         ],
         exclude: /node_modules/,
       },
+      
       {
         test: /\.css$/i,
         use: ["css-loader"],

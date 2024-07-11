@@ -7,15 +7,6 @@ export const VideoJS = (props, src) => {
   const playerRef = React.useRef(null);
   const { options, onReady } = props;
 
-  const videoJsOptions = {
-    autoplay: false,
-    controls: true,
-    width: 500,
-    innerHeight: 500,
-    responsive: true,
-    fluid: true,
-    src: "http://vjs.zencdn.net/v/oceans.mp4",
-  };
 
   React.useEffect(() => {
     // Make sure Video.js player is only initialized once

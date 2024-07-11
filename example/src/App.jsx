@@ -8,7 +8,11 @@ function App() {
   return (
     <>
       <FileWindow fileUrl={testImage} fileExtension="png" className="" />
-      {/* <FileWindow fileUrl={testVideo} fileType="video" className="" /> */}
+      <FileWindow
+        fileUrl="http://vjs.zencdn.net/v/oceans.mp4"
+        fileExtension="mov"
+        className=""
+      />
       {/* <FileWindow fileUrl={testAudio} fileType="audio" className="" /> */}
     </>
   );

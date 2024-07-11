@@ -2,7 +2,7 @@ import VideoJS from "./Videojs.jsx";
 import React from "react";
 import videojs from "video.js";
 
-export function VideoRenderer(src) {
+export function VideoRenderer({ src }: { src: string }) {
   const playerRef = React.useRef(null);
 
   const videoJsOptions = {
@@ -10,13 +10,25 @@ export function VideoRenderer(src) {
     controls: true,
     responsive: true,
     fluid: true,
+    // src,
     sources: [
       {
-        src: "http://vjs.zencdn.net/v/oceans.mp4",
+        src,
         type: "video/mp4", // TODO: implement this
       },
     ],
   };
+
+  // const videoJsOptions = {
+  //   autoplay: false,
+  //   controls: true,
+  //   width: 500,
+  //   innerHeight: 500,
+  //   responsive: true,
+  //   fluid: true,
+  //   src,
+  //   // src: "http://vjs.zencdn.net/v/oceans.mp4",
+  // };
 
   const handlePlayerReady = (player) => {
     playerRef.current = player;
