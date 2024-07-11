@@ -1,9 +1,12 @@
+import "video.js/dist/video-js.css";
+import { FileType, guessFileType } from "../file.types";
 import DefaultRenderer from "./DefaultRenderer";
 import DocumentRenderer from "./DocumentRenderer";
 import ErrorRenderer from "./ErrorRenderer";
-import SpreadsheetRenderer from "./SpreadsheetRenderer";
 import "./FileWindow.module.css";
-import { FileType, guessFileType } from "../file.types";
+import SpreadsheetRenderer from "./SpreadsheetRenderer";
+import { VideoRenderer } from "./Video/VideoRender";
+
 export interface FileWindowInterface {
   fileName: string;
   fileExtension: string;
@@ -37,16 +40,12 @@ export default function FileWindow({
       return <SpreadsheetRenderer />;
 
     case FileType.Video:
-      return (
-        <video controls preload="auto" className={className}>
-          <source src={fileUrl} />
-        </video>
-      );
+      return <VideoRenderer src={fileUrl.trim()} className={className} />;
 
     case FileType.Audio:
       return (
         <audio controls preload="auto" className={className}>
-          <source src={fileUrl} type="audio/mp3" />
+          <source src={fileUrl.trim()} type="audio/mp3" />
         </audio>
       );
 
