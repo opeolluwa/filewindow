@@ -5,8 +5,7 @@ import DocumentRenderer from "./DocumentRenderer";
 import ErrorRenderer from "./ErrorRenderer";
 import "./FileWindow.module.css";
 import SpreadsheetRenderer from "./SpreadsheetRenderer";
-import { VideoRenderer } from "./Video/VideoRender";
-
+// import { VideoRenderer } from "./Video/VideoRender";
 
 export interface FileWindowInterface {
   fileName: string;
@@ -41,7 +40,14 @@ export default function FileWindow({
       return <SpreadsheetRenderer />;
 
     case FileType.Video:
-      return <VideoRenderer src={fileUrl.trim()} />;
+      return (
+        <video controls width="" className={className}>
+          <source
+            src={fileUrl}
+            type={"video/" + fileExtension.toString().trim()}
+          />
+        </video>
+      );
 
     case FileType.Audio:
       return (

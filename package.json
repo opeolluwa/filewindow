@@ -1,6 +1,6 @@
 {
   "name": "@opeolluwa/filewindow",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "description": "A React file viewer for the web ",
   "main": "dist/index.js",
   "scripts": {
@@ -46,6 +46,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^20.14.9",
     "@types/react": "^18.3.3",
+    "babel-loader": "^9.1.3",
     "css-loader": "^7.1.2",
     "rollup": "^4.18.0",
     "rollup-plugin-postcss": "^4.0.2",

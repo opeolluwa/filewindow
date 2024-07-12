@@ -10,7 +10,8 @@ function App() {
       <FileWindow fileUrl={testImage} fileExtension="png" className="" />
       <FileWindow
         fileUrl="http://vjs.zencdn.net/v/oceans.mp4"
-        fileExtension="mov"
+        // fileUrl="../test-files/test-video.mp4"
+        fileExtension="mp4"
         className=""
       />
       {/* <FileWindow fileUrl={testAudio} fileType="audio" className="" /> */}
